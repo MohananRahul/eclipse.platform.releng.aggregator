@@ -59,9 +59,9 @@
               <target>
                 <unjar
                   src="target/repository/content.jar"
-                  dest="target/repository" />
-                <delete file="target/repository/content.jar" />
-                <delete file="target/repository/content.xml.xz" />
+                  dest="target/upack" />
+               <!--  <delete file="target/repository/content.jar" />
+                <delete file="target/repository/content.xml.xz" />-->
               </target>
             </configuration>
             <goals>
@@ -85,7 +85,7 @@
         <configuration>
           <transformationSets>
             <transformationSet>
-              <dir>target/repository</dir>
+              <dir>target/upack</dir>
               <includes>
                 <include>content.xml</include>
               </includes>
@@ -104,7 +104,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/target/repository</outputDirectory>
+              <outputDirectory>${basedir}/target/upack</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/target/generated-resources/xml/xslt</directory>
