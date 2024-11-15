@@ -25,7 +25,8 @@
   url = https://github.com/eclipse-platform/eclipse.platform.git
 [submodule "eclipse.platform.common"]
   path = eclipse.platform.common
-  url = https://github.com/eclipse-platform/eclipse.platform.common.git
+  url = https://github.com/MohananRahul/eclipse.platform.common.git
+  branch=R4_23_maintenance
 [submodule "eclipse.platform.debug"]
   path = eclipse.platform.debug
   url = https://github.com/eclipse-platform/eclipse.platform.debug.git
