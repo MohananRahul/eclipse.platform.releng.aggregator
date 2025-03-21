@@ -9,3 +9,5 @@ then
 else
     echo "Java is not installed."
 fi
+
+ls /opt/public/common/java/openjdk/
