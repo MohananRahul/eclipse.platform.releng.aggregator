@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Check if JAVA_HOME is set
-if [[ -z "${JAVA_HOME}" ]]; then
+if [[ -z "${javaHome}" ]]; then
   echo "JAVA_HOME is not set. Checking system default Java..."
   javaCmd=$(which java)
 else
-  javaCmd="${JAVA_HOME}/bin/java"
+  javaCmd=${javaHome}/bin/java
 fi
 
 # Verify if Java exists
