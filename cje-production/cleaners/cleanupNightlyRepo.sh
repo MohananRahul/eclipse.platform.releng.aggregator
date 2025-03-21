@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Check if JAVA_HOME is set
-
-JavaCMD=${JAVA_HOME}/java
-
-echo ${JAVA_HOME}
-
-# Print Java version
-echo "Using Java from: ${JavaCMD}"
-"${JavaCMD}" -version
+# Check if Java is installed
+if command -v java &> /dev/null
+then
+    echo "Java Version:"
+    java -version
+    echo "JAVA_HOME: $JAVA_HOME"
+else
+    echo "Java is not installed."
+fi
