@@ -159,13 +159,6 @@ function cleanRepo ()
     echo -e "\t${eclipseexe}"
     exit 1
   fi
-  javaexe=/opt/public/common/java/openjdk/jdk-17_x64-latest/bin/java
-  if [[ ! -x ${javaexe} ]]
-  then
-    echo -e "\n\tERROR: expected java location not found, or not executable"
-    echo -e "\t${javaexe}"
-    exit 1
-  fi
 
   antBuildFile=${workspace}/cleanupRepoScript${buildType}.xml
   antRunner=org.eclipse.ant.core.antRunner
@@ -188,7 +181,7 @@ function cleanRepo ()
       generateCleanupXML "${eclipseRepo}" $antBuildFile
       if [[ -z "${dryRun}" ]]
       then
-        $eclipseexe -nosplash --launcher.suppressErrors -data "${devWorkspace}" -application  ${antRunner} -f $antBuildFile -vm ${javaexe}
+        $eclipseexe -nosplash --launcher.suppressErrors -data "${devWorkspace}" -application  ${antRunner} -f $antBuildFile
         RC=$?
       fi
       if [[ $RC == 0 ]]
