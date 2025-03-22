@@ -71,7 +71,7 @@ function getReposToRemove ()
   cDir="$1"
   buildType=$2
   nRetain=$3
-  buildDir=${remoteBase}/eclipse/downloads/drops4
+  buildDir=${dropsPath}/eclipse/downloads/drops4
 
   if [[ ! -e "${cDir}" ]]
   then
@@ -220,12 +220,12 @@ function cleanRepo ()
 
 
 WORKSPACE=$1
-remoteBase="/home/data/httpd/download.eclipse.org"
+# dropsPath="/home/data/httpd/download.eclipse.org"
 
-# eclipseIRepo="${remoteBase}/eclipse/updates/4.36-I-builds"
-eclipseYRepo="${remoteBase}/eclipse/updates/4.34-Y-builds"
-# eclipsePRepo="${remoteBase}/eclipse/updates/4.36-P-builds"
-# eclipseBuildTools="${remoteBase}/eclipse/updates/buildtools"
+# eclipseIRepo="${dropsPath}/eclipse/updates/4.36-I-builds"
+eclipseYRepo="${dropsPath}/updates/4.34-Y-builds"
+# eclipsePRepo="${dropsPath}/eclipse/updates/4.36-P-builds"
+# eclipseBuildTools="${dropsPath}/eclipse/updates/buildtools"
 
 doDryrun=
 # global
