@@ -220,10 +220,10 @@ function cleanRepo ()
 
 
 WORKSPACE=$1
-# dropsPath="/home/data/httpd/download.eclipse.org"
+dropsPath="/home/data/httpd/download.eclipse.org"
 
 # eclipseIRepo="${dropsPath}/eclipse/updates/4.36-I-builds"
-eclipseYRepo="${dropsPath}/updates/4.34-Y-builds"
+eclipseYRepo="${dropsPath}/eclipse/updates/4.34-Y-builds"
 # eclipsePRepo="${dropsPath}/eclipse/updates/4.36-P-builds"
 # eclipseBuildTools="${dropsPath}/eclipse/updates/buildtools"
 
