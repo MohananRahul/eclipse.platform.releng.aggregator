@@ -71,7 +71,7 @@ function getReposToRemove ()
   cDir="$1"
   buildType=$2
   nRetain=$3
-  buildDir=${dropsPath}/eclipse/downloads/drops4
+  buildDir="${remoteBase}/eclipse/downloads/drops4"
 
   if [[ ! -e "${cDir}" ]]
   then
@@ -152,7 +152,7 @@ function cleanRepo ()
   nRetain=$3
   dryRun=$4
   # Changed to "hard coded" location of where to expect on Hudson.
-  eclipseexe=${WORKSPACE}/eclipse/eclipse
+  eclipseexe=${workspace}/eclipse/eclipse
   if [[ ! -x ${eclipseexe} ]]
   then
     echo -e "\n\tERROR: expected eclipse location not found, or not executable"
@@ -167,11 +167,11 @@ function cleanRepo ()
     exit 1
   fi
 
-  antBuildFile=${WORKSPACE}/cleanupRepoScript${buildType}.xml
+  antBuildFile=${workspace}/cleanupRepoScript${buildType}.xml
   antRunner=org.eclipse.ant.core.antRunner
 
   # To allow this cron job to work from hudson, or traditional crontab
-  devWorkspace=${WORKSPACE}/workspace-cleanup
+  devWorkspace=${workspace}/workspace-cleanup
 
   echo -e "\tDEBUG: Cleaning repository ${eclipseRepo} on $HOSTNAME on $(TZ="America/New_York" date ) " >&2
   getReposToRemove "${eclipseRepo}" $buildType $nRetain
@@ -219,13 +219,13 @@ function cleanRepo ()
 }
 
 
-WORKSPACE=$1
+workspace=$1
 remoteBase="/home/data/httpd/download.eclipse.org"
 
-# eclipseIRepo="${remoteBase}/eclipse/updates/4.36-I-builds"
-eclipseYRepo="${remoteBase}/eclipse/updates/4.34-Y-builds"
-# eclipsePRepo="${remoteBase}/eclipse/updates/4.36-P-builds"
-# eclipseBuildTools="${remoteBase}/eclipse/updates/buildtools"
+eclipseIRepo="${remoteBase}/eclipse/updates/4.36-I-builds"
+eclipseYRepo="${remoteBase}/eclipse/updates/4.36-Y-builds"
+eclipsePRepo="${remoteBase}/eclipse/updates/4.36-P-builds"
+eclipseBuildTools="${remoteBase}/eclipse/updates/buildtools"
 
 doDryrun=
 # global
